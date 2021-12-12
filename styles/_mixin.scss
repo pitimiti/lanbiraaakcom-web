@@ -1,0 +1,25 @@
+@mixin objectCenter {
+    text-align: center;
+    display: flex;
+    align-content: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+@mixin flexCenter($justifyContent: center) {
+    display: flex;
+    align-items: center;
+    justify-content: $justifyContent;
+}
+
+@mixin bgCenter {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+@mixin box {
+    border-radius: 20px;
+    border: 1px solid $borderGray;
+    box-shadow: $boxShadowGray;
+}
