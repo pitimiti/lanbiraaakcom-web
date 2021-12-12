@@ -1,0 +1,212 @@
+@import '~bootstrap/scss/bootstrap';
+@import './variables';
+@import './mixin';
+@import './mediaqueries';
+
+#nprogress {
+    .bar {
+        background: $black !important;
+    }
+    .peg {
+        box-shadow: 0 0 10px $black, 0 0 5px $black;
+    }
+    .spinner-icon {
+        border-top-color: $black;
+        border-left-color: $black;
+    }
+}
+
+body {
+    background-color: $lightGray;
+
+    a {
+        color: $black;
+        text-decoration: none;
+
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+h1 {
+    color: $black;
+    font-size: 24px;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $white;
+    padding: 10px 0;
+    border-bottom: 1px solid $borderGray;
+    box-shadow: $boxShadowGray;
+
+    .header-container {
+        @include flexCenter(space-between);
+
+        .logo {
+            img {
+                @include xs() {
+                    width: 170px;
+                }
+            }
+        }
+
+        .menu a {
+            font-size: 35px;
+            margin-left: 25px;
+
+            @include xs() {
+                font-size: 30px;
+            }
+
+            &.active {
+                border-bottom: 3px solid $black;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $white;
+    padding: 10px 0;
+    border-top: 1px solid $borderGray;
+    box-shadow: $boxShadowGray;
+
+    .footer-container {
+        @include flexCenter(space-between);
+
+        .copyright {
+            font-size: 14px;
+        }
+
+        .social {
+            a {
+                margin-left: 5px;
+
+                i {
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+}
+
+.detail-page {
+    padding: 120px;
+    text-align: center;
+
+    @include xs() {
+        padding: 120px 40px;
+    }
+}
+
+.main-page {
+    padding: 100px 0 60px 0;
+
+    .posts {
+        position: relative;
+
+        .post {
+            background-color: $white;
+            padding: 5px;
+            position: relative;
+            margin-bottom: 20px;
+            @include box();
+
+            .head {
+                border-bottom: 1px solid $borderGray;
+                text-align: center;
+                padding: 12px;
+
+                img {
+                    @include xs() {
+                        width: 50%;
+                    }
+                }
+            }
+
+            .bottom {
+                border-top: 1px solid $borderGray;
+                text-align: center;
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .left-area {
+        position: sticky;
+        top: 100px;
+
+        .profile-area {
+            background-color: $white;
+            padding: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            @include box();
+
+            .head {
+                background-color: $gray;
+                margin: -10px;
+                display: block;
+                height: 60px;
+
+                img {
+                    border-radius: 100px;
+                    width: 30%;
+                    @include objectCenter();
+                    position: relative;
+                    top: 10px;
+                }
+            }
+
+            .detail {
+                margin-top: 30px;
+                padding: 15px;
+
+                .fullname {
+                    font-weight: 500;
+                }
+
+                .nickname  {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .github-area {
+            background-color: $white;
+            padding: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            @include box();
+
+            .head {
+                border-bottom: 1px solid $borderGray;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .image {
+                padding: 20px 25px;
+            }
+
+            .text {
+                font-size: 13px;
+                padding: 5px 10px 10px 10px;
+            }
+        }
+    }
+}
